@@ -21,14 +21,22 @@ class ChooseCountryViewController: UIViewController {
 
     }
     
-    @IBAction func sendCountryWeatherData(_ sender: Any) {
-        getWeatherForecast {
-            guard self.weatherForecastInfo != nil else {
-                self.errorText.text = "Data for this country couldn't be retrieved, try again please"
-                return
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "displayCountryWeather"{
+            getWeatherForecast {
+                if let weatherForecast = segue.destination as? WeatherForecastViewController {
+                    weatherForecast.data = self.weatherForecastInfo
+                }
             }
-            self.performSegue(withIdentifier: "displayCountryWeather", sender: self)
         }
+    }
+    
+    @IBAction func sendCountryWeatherData(_ sender: Any) {
+        guard self.weatherForecastInfo != nil else {
+            self.errorText.text = "Data for this country couldn't be retrieved, try again please"
+            return
+        }
+        self.performSegue(withIdentifier: "displayCountryWeather", sender: self)
     }
 
     func getWeatherForecast(completion: @escaping () -> Void) {
@@ -41,6 +49,10 @@ class ChooseCountryViewController: UIViewController {
                 return
             } else {
                 self.weatherForecastInfo = WeatherForecast(dictionary: feed)
+                
+            }
+
+            OperationQueue.main.addOperation {
                 completion()
             }
         }

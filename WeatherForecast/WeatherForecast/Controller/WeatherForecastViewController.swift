@@ -41,13 +41,5 @@ class WeatherForecastViewController: UITableViewController {
         pressureText.text = "\(data.pressure)hPa"
         cloudsText.text = "\(data.clouds)%"
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "displayCountryWeather" {
-            if let weatherForecast = segue.source as? ChooseCountryViewController {
-                data = weatherForecast.weatherForecastInfo
-            }
-        }
-    }
 }
 

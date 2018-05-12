@@ -19,18 +19,29 @@ struct WeatherForecast {
     let windDeg: Int
     let pressure: Int
     let clouds: Int
-    let sunrise: Int
-    let sunset: Int
+    let sunrise: String?
+    let sunset: String?
+    
+    static func dateStringFromUnixTime(unixTime: Int) -> String  {
+        let timeInSeconds = TimeInterval(unixTime)
+        let weatherDate = NSDate(timeIntervalSince1970:timeInSeconds)
+        let dateFormatter = DateFormatter()
+        
+        return dateFormatter.string(from: weatherDate as Date)
+    }
     
     init(dictionary: WeatherForecastJSON) {
-        
-        let sys = dictionary["sys"] as! [String: Any]
+
+        let sys = dictionary["sys"] as! NSDictionary
         let weatherArray = dictionary["weather"] as! NSArray
-        let main = dictionary["main"] as! [String: Any]
-        let clouds = dictionary["clouds"] as! [String: Any]
-        let wind = dictionary["wind"] as! [String: Any]
+        let main = dictionary["main"] as! NSDictionary
+        let clouds = dictionary["clouds"] as! NSDictionary
+        let wind = dictionary["wind"] as! NSDictionary
         
-        var weather = weatherArray[0] as! [String: Any]
+        let weather = weatherArray[0] as! NSDictionary
+        
+        let sunriseUnixTime = sys["sunrise"] as! Int
+        let sunsetUnixTime = sys["sunset"] as! Int
         
         self.title = weather["main"] as! String
         self.description = weather["description"] as! String
@@ -42,7 +53,7 @@ struct WeatherForecast {
         self.windDeg = wind["deg"] as! Int
         self.pressure = main["pressure"] as! Int
         self.clouds = clouds["all"] as! Int
-        self.sunrise = sys["sunrise"] as! Int
-        self.sunset = sys["sunset"] as! Int
-    }
+        self.sunrise = WeatherForecast.dateStringFromUnixTime(unixTime: sunriseUnixTime)
+        self.sunset = WeatherForecast.dateStringFromUnixTime(unixTime: sunsetUnixTime)
+    }  
 }
