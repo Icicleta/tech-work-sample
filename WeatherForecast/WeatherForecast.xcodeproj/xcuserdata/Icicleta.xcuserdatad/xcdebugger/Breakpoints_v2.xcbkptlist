@@ -10,71 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherForecast/Controller/ChooseCountryViewController.swift"
-            timestampString = "547846603.801114"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "getWeatherForecast(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WeatherForecast/Controller/ChooseCountryViewController.swift"
-            timestampString = "547846603.8018219"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "getWeatherForecast(completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WeatherForecast.ChooseCountryViewController.sendCountryWeatherData(Any) -&gt; ()"
-                  moduleName = "WeatherForecast"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Icicleta/Projects/swift/tech-work-sample/WeatherForecast/WeatherForecast/Controller/ChooseCountryViewController.swift"
-                  timestampString = "547750771.9482861"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "72">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in WeatherForecast.ChooseCountryViewController.sendCountryWeatherData(Any) -&gt; ()"
-                  moduleName = "WeatherForecast"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Icicleta/Projects/swift/tech-work-sample/WeatherForecast/WeatherForecast/Controller/ChooseCountryViewController.swift"
-                  timestampString = "547750771.951313"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "35">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WeatherForecast/Controller/ChooseCountryViewController.swift"
-            timestampString = "547846603.802356"
+            timestampString = "547904555.090323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -89,62 +25,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeatherForecast/Controller/ChooseCountryViewController.swift"
-            timestampString = "547846603.802873"
+            filePath = "WeatherForecast/Model/WeatherForecast.swift"
+            timestampString = "547904555.091314"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "getWeatherForecast(completion:)"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "init(dictionary:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WeatherForecast/Controller/ChooseCountryViewController.swift"
-            timestampString = "547846603.803318"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "getWeatherForecast(completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; () in WeatherForecast.ChooseCountryViewController.getWeatherForecast(completion: () -&gt; ()) -&gt; ()"
-                  moduleName = "WeatherForecast"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Icicleta/Projects/swift/tech-work-sample/WeatherForecast/WeatherForecast/Controller/ChooseCountryViewController.swift"
-                  timestampString = "547845958.2316051"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "1318">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; () in WeatherForecast.ChooseCountryViewController.getWeatherForecast(completion: () -&gt; ()) -&gt; ()"
-                  moduleName = "WeatherForecast"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Icicleta/Projects/swift/tech-work-sample/WeatherForecast/WeatherForecast/Controller/ChooseCountryViewController.swift"
-                  timestampString = "547845958.2343121"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "18">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

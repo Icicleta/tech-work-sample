@@ -23,25 +23,26 @@ class ChooseCountryViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "displayCountryWeather"{
-            getWeatherForecast {
-                if let weatherForecast = segue.destination as? WeatherForecastViewController {
-                    weatherForecast.data = self.weatherForecastInfo
-                }
+            if let weatherForecast = segue.destination as? WeatherForecastViewController {
+                weatherForecast.weatherForecastData = self.weatherForecastInfo
             }
         }
     }
     
     @IBAction func sendCountryWeatherData(_ sender: Any) {
-        guard self.weatherForecastInfo != nil else {
-            self.errorText.text = "Data for this country couldn't be retrieved, try again please"
-            return
+        guard let country = countryTextField.text else { return }
+        self.country = country
+        getWeatherForecast {
+            guard self.weatherForecastInfo != nil else {
+                self.errorText.text = "Data for this country couldn't be retrieved, try again please"
+                return
+            }
+            self.performSegue(withIdentifier: "displayCountryWeather", sender: self)
         }
-        self.performSegue(withIdentifier: "displayCountryWeather", sender: self)
     }
 
     func getWeatherForecast(completion: @escaping () -> Void) {
-        guard let country = countryTextField.text else { return }
-        OpenWeatherMapAPI.getWeatherForecastJSON(country: country) { (json) in
+        OpenWeatherMapAPI.getWeatherForecastJSON(country: self.country!) { (json) in
             guard let feed = json else { print("JSON data hasn't been found"); return }
             print(feed)
             if let error = feed["message"] {
@@ -51,7 +52,6 @@ class ChooseCountryViewController: UIViewController {
                 self.weatherForecastInfo = WeatherForecast(dictionary: feed)
                 
             }
-
             OperationQueue.main.addOperation {
                 completion()
             }
