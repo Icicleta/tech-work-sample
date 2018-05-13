@@ -11,21 +11,9 @@ import Foundation
 struct WeatherForecast {
     let mainWeather: String
     let description: String
-    
-    let temperature: Double
-    var tempCelsius: Double {
-        get {
-            return temperature - 273.15
-        }
-    }
-    var tempFahrenheit: Double {
-        get {
-            return (temperature - 273.15) * 1.8 + 32
-        }
-    }
-
-    let minTemp: Double
-    let maxTemp: Double
+    let temperature: Temperature
+    let minTemp: Temperature
+    let maxTemp: Temperature
     let humidity: Int
     let windSpeed: Double
     let windDeg: Int
@@ -60,9 +48,9 @@ struct WeatherForecast {
         
         self.mainWeather = weather["main"] as! String
         self.description = weather["description"] as! String
-        self.temperature = main["temp"] as! Double
-        self.minTemp = main["temp_min"] as! Double
-        self.maxTemp = main["temp_max"] as! Double
+        self.temperature = Temperature(kelvin: main["temp"] as! Double)
+        self.minTemp = Temperature(kelvin: main["temp_min"] as! Double)
+        self.maxTemp = Temperature(kelvin: main["temp_max"] as! Double)
         self.humidity = main["humidity"] as! Int
         self.windSpeed = wind["speed"] as! Double
         self.windDeg = wind["deg"] as! Int

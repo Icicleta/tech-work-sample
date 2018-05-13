@@ -60,19 +60,13 @@ struct OpenWeatherMapAPI {
         let dataTask = URLSession.shared.dataTask(with: unwrappedURL) { data, response, error in
 
             guard let unwrappedData = data else { print("Error unwrapping data"); return }
-
-//            do {
-            if let responseJSON = try? JSONSerialization.jsonObject(with: unwrappedData, options: []) as? WeatherForecastJSON {
+            
+            do {
+                let responseJSON = try JSONSerialization.jsonObject(with: unwrappedData, options: []) as? WeatherForecastJSON
                 completion(responseJSON)
+            } catch {
+                print("Could not get API data. \(error), \(error.localizedDescription)")
             }
-//            } catch {
-//                print("Could not get API data. \(error), \(error.localizedDescription)")
-//            }
-//            let jsonDecoder = JSONDecoder()
-//            if let data = data,
-//                let weatherForecastInfo = try? jsonDecoder.decode(WeatherForecastAPI.self, from: data) {
-//                completion(weatherForecastInfo)
-//            }
         }
         dataTask.resume()
     }
