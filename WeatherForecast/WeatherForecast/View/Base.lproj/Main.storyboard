@@ -99,6 +99,9 @@
                                 <segment title="ºC"/>
                                 <segment title="ºF"/>
                             </segments>
+                            <connections>
+                                <action selector="weatherScaleSelected:" destination="xdL-SO-N47" eventType="valueChanged" id="5Az-KH-3or"/>
+                            </connections>
                         </segmentedControl>
                         <sections>
                             <tableViewSection id="U96-wv-9bV">

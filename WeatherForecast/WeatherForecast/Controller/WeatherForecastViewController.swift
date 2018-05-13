@@ -28,9 +28,9 @@ class WeatherForecastViewController: UITableViewController {
   
     @IBOutlet weak var weatherScaleSegment: UISegmentedControl!
     
-    func weatherScalePressed(_ segment: UISegmentedControl) {
+    @IBAction func weatherScaleSelected(_ sender: UISegmentedControl) {
         guard let data = weatherForecastData else { return }
-        switch segment.selectedSegmentIndex
+        switch sender.selectedSegmentIndex
         {
         case 0:
             temperatureText.text = "\(Int(round(data.tempCelsius)))°"
@@ -41,6 +41,19 @@ class WeatherForecastViewController: UITableViewController {
         }
     }
     
+//    func weatherScalePressed(_ segment: UISegmentedControl) {
+//        guard let data = weatherForecastData else { return }
+//        switch segment.selectedSegmentIndex
+//        {
+//        case 0:
+//            temperatureText.text = "\(Int(round(data.tempCelsius)))°"
+//        case 1:
+//            temperatureText.text = "\(Int(round(data.tempFahrenheit)))°"
+//        default:
+//            break;
+//        }
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,15 +62,15 @@ class WeatherForecastViewController: UITableViewController {
     
     func updateWeatherForecast() {
         guard let data = weatherForecastData else { return }
-        weatherScalePressed(weatherScaleSegment)
+        temperatureText.text = "\(Int(round(data.tempCelsius)))°"
         descriptionText.text = data.description
         mainWeather.text = "\(data.mainWeather)"
-        minTempText.text = "\(data.minTemp)K"
-        maxTempText.text = "\(data.maxTemp)K"
-        humidityText.text = "\(data.humidity)%"
-        windText.text = "Speed: \(data.windSpeed)m/s Degree: \(data.windDeg)%"
-        pressureText.text = "\(data.pressure)hPa"
-        cloudsText.text = "\(data.clouds)%"
+        minTempText.text = "\(data.minTemp) K"
+        maxTempText.text = "\(data.maxTemp) K"
+        humidityText.text = "\(data.humidity) %"
+        windText.text = "Speed: \(data.windSpeed) m/s  Degree: \(data.windDeg) %"
+        pressureText.text = "\(data.pressure) hPa"
+        cloudsText.text = "\(data.clouds) %"
     }
 }
 
