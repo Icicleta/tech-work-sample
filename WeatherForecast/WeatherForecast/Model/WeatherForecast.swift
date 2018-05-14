@@ -19,19 +19,17 @@ struct WeatherForecast {
     let windDeg: Int
     let pressure: Int
     let clouds: Int
-    let sunrise: NSDate
-    let sunset: NSDate
+    let sunrise: String
+    let sunset: String
     
-//    static func dateStringFromUnixTime(unixTime: Double) -> Date  {
-//        let timeInSeconds = TimeInterval(unixTime)
-//        let weatherDate = NSDate(timeIntervalSince1970:unixTime)
+    static func dateStringFromUnixTime(unixTime: Double) -> String  {
+        let weatherDate = NSDate(timeIntervalSince1970:unixTime)
         // Returns date formatted as 12 hour time.
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "hh:mm a"
-//        print(dateFormatter.string(from: weatherDate as Date))
-//        return dateFormatter.string(from: weatherDate as Date)
-//        return weatherDate as Date
-//    }
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        dateFormatter.dateFormat = "hh:mm a"
+        return dateFormatter.string(from: weatherDate as Date)
+    }
     
     init(dictionary: WeatherForecastJSON) {
 
@@ -43,9 +41,6 @@ struct WeatherForecast {
         
         let weather = weatherArray[0] as! NSDictionary
         
-        let sunriseUnixTime = sys["sunrise"] as! Double
-        let sunsetUnixTime = sys["sunset"] as! Double
-        
         self.mainWeather = weather["main"] as! String
         self.description = weather["description"] as! String
         self.temperature = Temperature(kelvin: main["temp"] as! Double)
@@ -56,7 +51,7 @@ struct WeatherForecast {
         self.windDeg = wind["deg"] as! Int
         self.pressure = main["pressure"] as! Int
         self.clouds = clouds["all"] as! Int
-        self.sunrise = NSDate(timeIntervalSince1970: sunriseUnixTime)
-        self.sunset = NSDate(timeIntervalSince1970: sunsetUnixTime)
+        self.sunrise = WeatherForecast.dateStringFromUnixTime(unixTime: sys["sunrise"] as! Double)
+        self.sunset = WeatherForecast.dateStringFromUnixTime(unixTime: sys["sunset"] as! Double)
     }
 }

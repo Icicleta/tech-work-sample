@@ -24,8 +24,8 @@ class WeatherForecastViewController: UITableViewController {
     @IBOutlet weak var pressureText: UILabel!
     @IBOutlet weak var cloudsText: UILabel!
     @IBOutlet weak var sunriseText: UILabel!
-    @IBOutlet weak var sunsetText: UIView!
-  
+    @IBOutlet weak var sunsetText: UILabel!
+    
     @IBOutlet weak var weatherScaleSegment: UISegmentedControl!
     
     @IBAction func weatherScaleSelected(_ sender: UISegmentedControl) {
@@ -62,6 +62,8 @@ class WeatherForecastViewController: UITableViewController {
         windText.text = "Speed: \(data.windSpeed) m/s  Degree: \(data.windDeg) %"
         pressureText.text = "\(data.pressure) hPa"
         cloudsText.text = "\(data.clouds) %"
+        sunriseText.text = data.sunrise
+        sunsetText.text = data.sunset
     }
 }
 

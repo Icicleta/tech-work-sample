@@ -19,37 +19,11 @@ extension URL {
 typealias WeatherForecastJSON = [String: Any]
 
 struct OpenWeatherMapAPI {
-//    var sys: [String: String]
-//    var weather: [[String: String]]
-//    var main: [String: String]
-//    var wind: [String: String]
-//    var rain: [String: String]
-//    var clouds: [String: String]
-//
-//    enum Keys: String, CodingKey {
-//        case sys
-//        case weather
-//        case main
-//        case wind
-//        case rain
-//        case clouds
-//    }
-//
-//    init(from decoder: Decoder) throws {
-//        let valueContainer = try decoder.container(keyedBy: Keys.self)
-//        self.sys = try valueContainer.decode([String: String].self, forKey: Keys.sys)
-//        self.weather = try valueContainer.decode([[String: String]].self, forKey: Keys.weather)
-//        self.main = try valueContainer.decode([String: String].self, forKey: Keys.main)
-//        self.wind = try valueContainer.decode([String: String].self, forKey: Keys.wind)
-//        self.rain = try valueContainer.decode([String: String].self, forKey: Keys.rain)
-//        self.clouds = try valueContainer.decode([String: String].self, forKey: Keys.clouds)
-//    }
-//}
 
     static func getWeatherForecastJSON(country: String, completion: @escaping (WeatherForecastJSON?) -> Void) {
         let WEATHER_URL = "https://samples.openweathermap.org/data/2.5/weather"
         let query: [String: String] = [
-            "appid": "62fc4256-8f8c-11e5-8994-feff819cdc9f",
+            "appid": kCFURLIsApplicationKey as String,
             "q": country
         ]
 

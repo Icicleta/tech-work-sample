@@ -19,48 +19,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3t-ov-apb">
-                                <rect key="frame" x="40" y="210.66666666666666" width="334" height="0.0"/>
+                                <rect key="frame" x="40" y="191" width="334" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.55648882772020725" green="0.11210282034895297" blue="0.048659173836530921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="4wG-Dg-483">
-                                <rect key="frame" x="20" y="320.66666666666669" width="374" height="96"/>
+                                <rect key="frame" x="20" y="301" width="374" height="134"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dr7-EK-4vq">
-                                        <rect key="frame" x="77.333333333333329" y="0.0" width="219.66666666666669" height="48"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v3f-mo-bJZ">
-                                        <rect key="frame" x="37" y="66" width="300" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3nD-b4-853">
+                                        <rect key="frame" x="70.666666666666686" y="0.0" width="233" height="134"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="58j-0y-ILz">
-                                                <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dr7-EK-4vq">
+                                                <rect key="frame" x="0.0" y="0.0" width="233" height="52"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
+                                                <color key="textColor" red="0.9607755829015544" green="0.54786520787497639" blue="0.071677987091587417" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="58j-0y-ILz">
+                                                <rect key="frame" x="0.0" y="62" width="233" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwT-oT-tfY">
-                                                <rect key="frame" x="270" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="Go"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwT-oT-tfY">
+                                                <rect key="frame" x="0.0" y="102" width="233" height="32"/>
+                                                <color key="backgroundColor" red="0.96077558289999998" green="0.54786520790000004" blue="0.071677987090000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="15"/>
+                                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="3"/>
+                                                <size key="titleShadowOffset" width="2" height="0.0"/>
+                                                <state key="normal" title="GO">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="sendCountryWeatherData:" destination="gI6-3d-xn9" eventType="touchUpInside" id="jtW-RO-u7e"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="VdU-kl-tb4"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="v3f-mo-bJZ" firstAttribute="leading" secondItem="4wG-Dg-483" secondAttribute="leading" constant="37" id="Ezi-Jf-FQy"/>
-                                    <constraint firstAttribute="trailing" secondItem="v3f-mo-bJZ" secondAttribute="trailing" constant="37" id="xWi-Ia-C0y"/>
-                                </constraints>
                             </stackView>
                         </subviews>
+                        <color key="backgroundColor" red="0.10588235410000001" green="0.43529412150000002" blue="0.65882354970000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="BAK-Xe-m1m" firstAttribute="trailing" secondItem="4wG-Dg-483" secondAttribute="trailing" constant="20" id="398-yt-HHC"/>
                             <constraint firstItem="4wG-Dg-483" firstAttribute="centerX" secondItem="8yY-tG-PIJ" secondAttribute="centerX" id="6OA-3B-o0W"/>
@@ -486,7 +486,7 @@
                         <outlet property="minTempText" destination="aA4-Te-MUi" id="5vW-oz-tAW"/>
                         <outlet property="pressureText" destination="Hvt-E6-8BG" id="tXG-of-pvc"/>
                         <outlet property="sunriseText" destination="dMl-BZ-xPg" id="ci3-AR-aCC"/>
-                        <outlet property="sunsetText" destination="VpX-z0-qB4" id="uLd-bp-qbP"/>
+                        <outlet property="sunsetText" destination="Pq9-PW-p94" id="W60-qP-hyY"/>
                         <outlet property="temperatureText" destination="T6s-D7-5N1" id="cp8-79-Cv0"/>
                         <outlet property="weatherScaleSegment" destination="EaZ-lN-RYr" id="f5o-4n-Xs1"/>
                         <outlet property="windText" destination="BKv-ga-3QT" id="g3x-MZ-H0K"/>
